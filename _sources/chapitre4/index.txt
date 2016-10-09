@@ -45,7 +45,7 @@ La librairie Numpy permet la manipulation des tableaux et des matrices. Elle int
 
 
 
-Généralement, l'utilisation de Numpy permet de réduire considérablement le nombre de boucles dans votre programme. En effet, lorsqu'une fonction mathématique est appliquée à un tableau Numpy, Numpy va automatiquement appliquer cette fonction à chaque élément du tableau.
+Généralement, l'utilisation de Numpy permet de réduire considérablement le nombre de boucles dans votre programme. En effet, lorsqu'une fonction mathématique est appliquée à un tableau Numpy, Numpy va automatiquement appliquer cette fonction à chaque élément du tableau !
 
 Pour illustrer cette fonctionnalité, imaginons que nous souhaitons calculer le cosinus de plusieurs angles. Avec un langage de bas niveau comme le C, il faut créer un tableau contenant nos angles puis parcourir ce tableau avec une boucle for. Avec Numpy, c'est plus simple :)
 
