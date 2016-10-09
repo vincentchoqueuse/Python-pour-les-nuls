@@ -1,0 +1,27 @@
+.. Python pour les nuls documentation master file, created by
+   sphinx-quickstart on Mon Nov  9 20:33:50 2015.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Python pour les nuls
+====================
+
+.. note:: J'ai réalisé ce petit tutoriel pour encourager les gens à opérer un switch Matlab -> Python. Si une partie de ce tutoriel vous a semblé difficile (ou pire, pas clair), merci de me contacter via mon `github <https://github.com/vincentchoqueuse>`_.
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   chapitre1/index
+   chapitre2/index
+   chapitre3/index
+   chapitre4/index
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+

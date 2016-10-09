@@ -1,0 +1,52 @@
+Pourquoi Python ?
+=================
+
+.. figure:: logo.svg
+   :align: center
+   :width: 200
+
+
+Depuis les balbutiements de l'informatique dans les années 50, de nombreux langages de programmation ont été développés. La liste des langages de programmation actuellement répertoriés sous `Wikipedia <https://en.wikipedia.org/wiki/List_of_programming_languages>`_ en donnerait presque le tournis. Pratiquement, il est inutile de connaître tous ces langages...il suffit juste trouver un langage en adéquation avec ses attentes.
+
+Chaque langage de programmation possède ses avantages et ses inconvénients. Globalement, disons qu'il existe un compromis entre la rapidité d'exécution du programme, les fonctionnalités integrées, la portabilité et la lisibilité du code (Evitez le `Malboge <https://fr.wikipedia.org/wiki/Malbolge>`_ à ce niveau :) !). D'un coté, si votre préoccupation concerne le temps d’exécution de votre programme, plongez-vous vers des langages de bas-niveau comme le C. Maintenant, si vous souhaitez sortir le "top" des applications scientifiques, optez plutôt vers un langage de haut-niveau intégrant de nombreuses fonctionnalités.
+
+Actuellement dans la communauté scientifique, un grand nombre d'ingénieurs et de chercheurs utilise le langage `Matlab <http://fr.mathworks.com/products/matlab/>`_. Ce langage intègre un large panel de fonctionnalités. Si ces fonctionnalités ne sont pas suffisantes, il est possible de les étendre en installant de nouvelles `Toolbox <http://fr.mathworks.com/products/>`_. Malheureusement, Matlab n'est pas gratuit. Il faudra compter 3000 euros pour une licence de base...et remettre la main au porte-feuille pour chaque Toolbox. Dans ce contexte, certains scientifiques se sont repliés vers un langage gratuit et plus ouvert: le Python. Armé du trio Numpy/Scipy/Matplotlib, Python intègre des fonctionnalités quasi-identiques à Matlab et possède une polyvalence nettement supérieure à ce dernier. A titre d'exemple, Python est aussi bien utilisé par la NASA...que par Instagram pour gérer vos dernières photos de vacances ! Dans le classement TIOBE répertoriant les langages de programmation les plus populaires, Python est actuellement placé en 5ième position (loin devant Matlab qui est placé 17ième) [TIOBE]_. Un petit tour sur le site de l'APEC montre également que les `programmeurs Python <https://cadres.apec.fr/home/mes-offres/recherche-des-offres-demploi/liste-des-offres-demploi.html?sortsType=SCORE&sortsDirection=DESCENDING&nbParPage=20&typeAffichage=detaille&page=0&motsCles=python>`_ sont plus recherchés que les  `programmeurs Matlab <https://cadres.apec.fr/home/mes-offres/recherche-des-offres-demploi/liste-des-offres-demploi.html?sortsType=SCORE&sortsDirection=DESCENDING&nbParPage=20&typeAffichage=detaille&page=0&motsCles=matlab>`_.
+
+
+Un peu d'histoire
+-----------------
+
+A la fin des années 1980, le programmeur `Guido van Rossum <https://en.wikipedia.org/wiki/Guido_van_Rossum>`_ initia, dans son temps libre, le développement d'un nouveau langage de Programmation. Il le baptisa *Python* en référence à la troupe d'humoristes britanniques *les Monty Python*.
+
+
+.. figure:: holygrail.jpg
+   :align: center
+
+   Le "black knight" des Monty Python dans le cultissime `Sacré Grall <https://www.youtube.com/embed/dhRUe-gz690>`_
+
+
+Historiquement, la première version publique du langage fut sortie en Février 1991 (version 0.9.010). Ensuite, différentes versions du langage se succédèrent
+
+* Janvier 1994: sortie de la version 1.0
+* Octobre 2000: sortie de la version 2.0
+* Décembre 2008: sortie de la version 3.0 (pas de compatibilité descendante avec la version 2.0)
+* Septembre 2015: sortie de la version **3.5**
+
+.. tip:: Si vous débutez en langage Python, commencez directement avec la version la plus récente. Certaines fonctionalités de la version 2 étant obsolètes dans la version 3.
+
+
+Les points forts du Python
+---------------------------
+
+Le langage Python est un langage interprété permettant à la fois la programmation impérative **structurée** et la programmation **orientée objet**. Globalement, les points forts du langage sont
+
+* **Lisibilité du code**: Avec son principe d'indentation, les codes Python sont généralement très simples à lire...et c'est BEAU !
+* **Portabilité**: Python se faufile sans soucis dans n'importe quel système d'exploitation (de Windows à OSX en passant par Linux). Il est même préinstallé dans la plupart des OS. Vous achetez un Mac, vous ouvrez un terminal et vous lancez *Python*...c'est bon, vous êtes prêt à coder !
+* **Librairies disponibles**: Python adopte une approche *batteries included* c-a-d que le langage intègre de base un ensemble de libraires très complet. Que ca soit pour faire du Web, des calculs scientifiques ou pourquoi pas combiner les deux, Python propose forcement des outils pour vous !
+* **Communauté importante**: Python possède une plateforme très active, `PyPi <https://pypi.python.org/pypi>`_,  pour le dépôt des librairies (plus de 70000 librairies recensées). C'est également un langage très représenté sur `Github <https://github.com>`_.
+
+
+Références
+----------
+
+.. [TIOBE] http://www.tiobe.com/index.php/content/paperinfo/tpci/index.html

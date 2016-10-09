@@ -1,0 +1,107 @@
+Installation & Environnement de developpement
+=============================================
+
+Installation de Python
+----------------------
+
+Pour débuter en Python, il faut tout d'abord installer Python sur notre machine. Les systèmes d'exploitation Linux et OSX (Apple) intègrent une version préinstallée de Python. Pour le développement d'applications scientifiques, il est toutefois conseillé d'utiliser une distribution plus complète intégrant notamment les librairies **Numpy/Scipy/Matplotlib** ainsi que **ipython**.
+
+.. tip:: La distribution `Anaconda <https://www.continuum.io/downloads>`_ possède tout ce qu'il faut pour se lancer dans le développement d'applications scientifiques (voir la liste des [packages]_).
+
+Environnement de développement
+------------------------------
+
+Il existe des environnements de développement très complets pour programmer en Python. Par exemple, les utilisateurs de Matlab retrouveront rapidement leurs marques avec l'environnement `Spyder <https://github.com/spyder-ide/spyder>`_ (préinstallé avec Anaconda). Toutefois, nul besoin d'utiliser un environnement aussi complet. Pour débuter, nous allons utiliser
+
+* un éditeur de code (Notepad++, Gedit, Xcode, Sublime Text...)
+* Un terminal pour lancer vos programmes.
+
+
+
+Linux (Ubuntu)
+^^^^^^^^^^^^^^
+
+.. figure:: ubuntu.jpg
+   :align: center
+
+   Environnement de développement sous Ubuntu composé de 1) gedit 2) un terminal et 3) un explorateur de fichier.
+
+
+Mac OSX
+^^^^^^^
+
+.. figure:: OSX.jpg
+    :align: center
+
+    Environnement de développement sous MAC OSX composé de 1) Xcode 2) un terminal et 3) un finder.
+
+Windows 7
+^^^^^^^^^
+
+.. figure:: win7.jpg
+    :align: center
+
+    Environnement de développement sous Windows 7 composé de 1) Notepad++ 2) un terminal (cmd.exe) et 3) un explorateur de fichier.
+
+Premier programme
+-----------------
+
+
+Nous allons écrire notre premier programme pour tester le bon fonctionnement de notre installation Python et nous familiariser avec notre environnement de développement.
+
+1. Dans un répertoire, créez un fichier et nommez le hello_world.py.
+2. Ouvrez le fichier hello_world.py avec votre éditeur préféré puis inscrivez-y le code suivant
+
+.. literalinclude:: hello_world.py
+
+Une fois notre fichier sauvegardé, il est possible de tester notre programme de la manière suivante:
+
+1. Lancez un terminal, puis naviguez jusqu'au répertoire contenant votre fichier hello_world.py.
+2. Exécutez votre code Python en lançant la commande
+
+.. code ::
+
+   python hello_world.py
+
+Si tout fonctionne bien, votre terminal affichera "Hello World".
+
+
+ipython, la fenêtre de commande du python
+-----------------------------------------
+
+Lors de la phase de prototypage des algorithmes, il est toujours pratique de pouvoir accéder au contenu des variables après l'execution de vos scripts. Sous Matlab, cette fonctionnalité est accessible via la fenêtre de commande. Son équivalent Python se nomme *ipython*.
+
+1. Lancez un terminal, puis naviguez jusqu'au répertoire contenant votre fichier hello_world.py.
+2. Lancez ipython via la commande
+
+.. code ::
+
+   ipython
+
+3. Exécutez les instructions suivantes
+
+.. code::
+
+   In [1]: run hello_world.py
+   Hello World
+
+   In [2]: ma_chaine
+   Out[2]: 'Hello World'
+
+La dernière commande montre qu'il est possible d’accéder au contenu de la variable ma_chaine après l'execution de notre script.
+
+Autre fonctionnalité pratique, ipython permet également l'affichage de la documentation. Pour accéder à la documentation d'une fonction, il faut appeler la fonction help et ajouter comme argument le nom de la fonction qui nous intéresse. Par exemple, la documentation de la fonction print s'obtient de la manière suivante (appuyez sur q pour quitter la documentation):
+
+.. code::
+
+    In [3]: help(print)
+
+Pour fermer ipython, il suffit de lancer la commande exit.
+
+
+
+Références
+----------
+
+.. [packages] Liste des packages de la distribution Anaconda http://docs.continuum.io/anaconda/pkg-docs
+

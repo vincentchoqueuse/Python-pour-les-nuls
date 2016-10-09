@@ -1,0 +1,286 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Les bases du Langages &mdash; documentation Python pour les nuls 1.0</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="documentation Python pour les nuls 1.0" href="../index.html"/>
+        <link rel="next" title="Le trio Numpy / Scipy / Matplotlib" href="../chapitre4/index.html"/>
+        <link rel="prev" title="Installation &amp; Environnement de developpement" href="../chapitre2/index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python pour les nuls
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../chapitre1/index.html">Pourquoi Python ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapitre2/index.html">Installation &amp; Environnement de developpement</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Les bases du Langages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#les-variables">Les variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#les-structures-de-controles">Les structures de contrôles</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#le-test-if-else">Le test if/else</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#la-boucle-for">La boucle for</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#la-boucle-while">La boucle while</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#references">Références</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapitre4/index.html">Le trio Numpy / Scipy / Matplotlib</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Python pour les nuls</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Les bases du Langages</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/chapitre3/index.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="les-bases-du-langages">
+<h1>Les bases du Langages<a class="headerlink" href="#les-bases-du-langages" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="les-variables">
+<h2>Les variables<a class="headerlink" href="#les-variables" title="Lien permanent vers ce titre">¶</a></h2>
+<p>La création d&#8217;une variable en python s&#8217;obtient simplement en indiquant le nom de la variable suivi du signe égal et de sa valeur. Ainsi pour créer une variable contenant la chaîne de caractère &#8220;coucou&#8221;, nous pouvons utiliser l&#8217;instruction</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">ma_chaine</span><span class="o">=</span><span class="s2">&quot;coucou&quot;</span>
+</pre></div>
+</div>
+<p>Le type de la variable est directement déterminé par son contenu (nombre, chaîne de caractère ou booléen).</p>
+<p>Concernant le nom de la variable, la liste ci dessous présente les mots réservés du langage.</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="ow">and</span><span class="p">,</span> <span class="k">assert</span><span class="p">,</span> <span class="k">break</span><span class="p">,</span> <span class="n">class</span><span class="p">,</span> <span class="k">continue</span><span class="p">,</span> <span class="n">def</span><span class="p">,</span> <span class="k">del</span><span class="p">,</span> <span class="k">elif</span><span class="p">,</span> <span class="k">else</span><span class="p">,</span> <span class="k">except</span><span class="p">,</span> <span class="n">exec</span><span class="p">,</span> <span class="k">finally</span><span class="p">,</span> <span class="k">for</span><span class="p">,</span> <span class="n">from</span><span class="p">,</span> <span class="k">global</span><span class="p">,</span> <span class="k">if</span><span class="p">,</span> <span class="n">import</span><span class="p">,</span> <span class="ow">in</span><span class="p">,</span> <span class="ow">is</span><span class="p">,</span> <span class="k">lambda</span><span class="p">,</span> <span class="ow">not</span><span class="p">,</span> <span class="ow">or</span><span class="p">,</span> <span class="k">pass</span><span class="p">,</span> <span class="nb">print</span><span class="p">,</span> <span class="k">raise</span><span class="p">,</span> <span class="k">return</span><span class="p">,</span> <span class="k">try</span><span class="p">,</span> <span class="k">while</span><span class="p">,</span> <span class="k">yield</span>
+</pre></div>
+</div>
+<p>Bien entendu, nous éviterons dans la mesure du possible d&#8217;utiliser ces mots pour nommer une variable ou une fonction ;)</p>
+</div>
+<div class="section" id="les-structures-de-controles">
+<h2>Les structures de contrôles<a class="headerlink" href="#les-structures-de-controles" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Le Python intègre trois structures de contrôle: le if, le for et le while.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">En python, les instructions appartenant à une structure de contrôles sont indiquées par des indentations (5 espaces ou une tabulation).</p>
+</div>
+<div class="section" id="le-test-if-else">
+<h3>Le test if/else<a class="headerlink" href="#le-test-if-else" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Le test if permet d&#8217;aiguiller le programme en fonction d&#8217;une condition binaire.</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">nombre</span><span class="o">=</span><span class="mi">1</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">nombre</span><span class="o">%</span><span class="mi">2</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;le nombre </span><span class="si">%d</span><span class="s2"> est pair&quot;</span> <span class="o">%</span> <span class="n">nombre</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;le nombre </span><span class="si">%d</span><span class="s2"> est impair&quot;</span> <span class="o">%</span> <span class="n">nombre</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ce programme permet de tester si un nombre est pair. Il est basé sur l&#8217;opérateur % permettant le calcul du reste de la division entière par 2.</p>
+</div>
+<div class="section" id="la-boucle-for">
+<h3>La boucle for<a class="headerlink" href="#la-boucle-for" title="Lien permanent vers ce titre">¶</a></h3>
+<p>La boucle for permet de réaliser un ensemble d&#8217;instructions plusieurs fois. Cette boucle nécessite de connaître au préalable le nombre d&#8217;itérations.</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">Sn</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>                       <span class="c1">#initialisation de Sn</span>
+<span class="k">for</span> <span class="n">indice</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">):</span>   <span class="c1">#boucle for allant de 1 à 5</span>
+    <span class="n">Sn</span><span class="o">=</span><span class="n">indice</span><span class="o">*</span><span class="n">Sn</span>            <span class="c1">#calcul successif du produit</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sn=</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">Sn</span><span class="p">)</span>     <span class="c1">#affichage du produit</span>
+</pre></div>
+</div>
+<p>L&#8217;exemple ci-dessus permet de déterminer les élements d&#8217;une suite géométrique. Le programme va afficher les élements de la suite pour les différentes valeurs de N c-a-d Sn=1, Sn=2, Sn=6, Sn=24 et Sn=120. Le début et la fin de boucle sont spécifiés via les arguments de la fonction range. Concernant ces arguments, il y a trois possibilités</p>
+<ul class="simple">
+<li>Lorsque la fonction range ne comporte qu&#8217;un seul argument N, la boucle ira de 0 à N-1.</li>
+<li>Lorsque la fonction range comporte deux arguments N1 et N2, la boucle ira de N1 à N2-1.</li>
+<li>Lorsque la fonction range comporte trois arguments N1, N2 et N3, la boucle ira de N1 à N2-1 par pas égal à N3.</li>
+</ul>
+<p>Notons que toute instruction ne comportant pas d&#8217;indentation sera considérée extérieure à la structure de contrôle. A titre d&#8217;illustration, si nous supprimons les indentations de la dernière ligne du programme précédent, le programme n&#8217;affichera plus que Sn=120.</p>
+</div>
+<div class="section" id="la-boucle-while">
+<h3>La boucle while<a class="headerlink" href="#la-boucle-while" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Tout comme le for, la boucle while permet de réaliser un ensemble d&#8217;instructions plusieurs fois. Toutefois, contrairement au for, le nombre d&#8217;itérations n&#8217;est pas nécessairement connu à l&#8217;avance et dépend d&#8217;une ou de plusieurs conditions.</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please enter &#39;coucou&#39;:&quot;</span><span class="p">)</span>
+<span class="k">while</span> <span class="n">n</span> <span class="o">!=</span> <span class="s1">&#39;coucou&#39;</span><span class="p">:</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please enter &#39;coucou&#39;:&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Le programme ci-dessus demande à l&#8217;utilisateur de rentrer au clavier la chaine de caractères &#8220;coucou&#8221;. Le programme continue de boucler tant que le chaîne de caractère n&#8217;est pas bonne. Notons qu&#8217;en Python, les boucles while sont nettement moins fréquentes que les boucles for.</p>
+</div>
+</div>
+<div class="section" id="references">
+<h2>Références<a class="headerlink" href="#references" title="Lien permanent vers ce titre">¶</a></h2>
+<table class="docutils citation" frame="void" id="package-list" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[Package_List]</td><td>Liste des packages de la distribution Anaconda <a class="reference external" href="http://docs.continuum.io/anaconda/pkg-docs">http://docs.continuum.io/anaconda/pkg-docs</a></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../chapitre4/index.html" class="btn btn-neutral float-right" title="Le trio Numpy / Scipy / Matplotlib" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../chapitre2/index.html" class="btn btn-neutral" title="Installation &amp; Environnement de developpement" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Vincent Choqueuse.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
