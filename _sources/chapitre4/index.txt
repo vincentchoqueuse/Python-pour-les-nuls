@@ -1,0 +1,107 @@
+Le trio Numpy / Scipy / Matplotlib
+==================================
+
+L'un des intérêts du Python réside dans son approche *Batteries Included* qui lui confèrent une grande polyvalence. Grace à ses Batteries, le Python peut aussi bien réaliser des calculs mathématiques poussés que gérer un site web ou traiter des images.
+
+Dans les sections suivantes, nous allons faire un tour rapide de plusieurs *Batteries* particulièrement utiles pour les scientifiques. Plus particulièrement, nous allons nous focaliser sur le trio Numpy/Scipy/ Matplotlib...véritable couteau suisse du calcul scientifique en Python !
+
+Utilisation d'une *Battery*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Pour inclure une *Battery* dans un programme, il faut explicitement l'importer en début de programme. Le programme suivant montre comment importer la librairie Numpy et utiliser sa fonction ones (création d'un tableau comportant N éléments à 1)
+
+.. code ::
+
+    from numpy import *
+
+    x=ones(10)       #création d'un tableau de 1
+    print(x)         #affichage du tableau
+
+
+.. tip::
+
+    Pour éviter d’éventuels conflits lors de l'importation des *Batteries* (doublons sur les noms de fonctions, etc), il est possible de définir le *namespace* d'une librairie en utilisant le terme *as*. A titre d'illustration, le programme suivant importe Numpy avec le namespace *np*  ::
+
+            import numpy as np  #importation de numpy avec le namespace np
+
+            x=np.ones(10)       #création d'un tableau de 1
+            print(x)            #affichage du tableau
+
+Numpy
+^^^^^
+
+.. note::
+
+    La documentation de Numpy est accessible à l'adresse: https://docs.scipy.org/doc/numpy/reference/routines.html
+
+.. note::
+
+   Contrairement à Matlab, le premier élément d'un tableau est stocké à la position 0.
+
+
+La librairie Numpy permet la manipulation des tableaux et des matrices. Elle intègre également un grand nombre de fonctionnalités mathématiques. Le programme suivant montre comment utiliser certaines de ses fonctions.
+
+.. literalinclude:: numpy1.py
+
+
+
+Généralement, l'utilisation de Numpy permet de réduire considérablement le nombre de boucles dans votre programme. En effet, lorsqu'une fonction mathématique est appliquée à un tableau Numpy, Numpy va automatiquement appliquer cette fonction à chaque élément du tableau.
+
+Pour illustrer cette fonctionnalité, imaginons que nous souhaitons calculer le cosinus de plusieurs angles. Avec un langage de bas niveau comme le C, il faut créer un tableau contenant nos angles puis parcourir ce tableau avec une boucle for. Avec Numpy, c'est plus simple :)
+
+.. literalinclude:: numpy2.py
+
+
+Matplotlib
+^^^^^^^^^^
+.. note::
+
+   La documentation de Matplotlib est accessible à l'adresse: http://matplotlib.org/contents.html
+
+Tout scientifique qui se respecte doit posséder dans sa trousse à outils une librairie d'affichage graphique digne de ce nom pour visualiser ses données. C'est ici que Matplotlib intervient. La librairie Matplotlib permet l'affichage de courbes, de graphiques, d'histogrammes et l'export des courbes dans divers formats (pdf, svg, png ou bmp). Matplotlib possède également un module nommé pylab utilisant une syntaxe proche de Matlab pour l'affichage. L'exemple ci-dessous montre comment générer puis tracer une sinusoîde avec le module pylab.
+
+.. plot:: chapitre4/matplotlib1.py
+   :include-source:
+
+La superposition de deux courbes s'obtient simplement en appelant plusieurs fois la fonction plot. Le programme suivant illustre cette fonctionnalité.
+
+.. plot:: chapitre4/matplotlib2.py
+   :include-source:
+
+Scipy
+^^^^^
+
+.. note::
+
+   La documentation de Scipy est accessible à l'adresse: http://docs.scipy.org/doc/scipy/reference/
+
+La librairie Scipy intégre un ensemble de modules pour l'optimisation, l'algèbre linéaire, les statistiques, le traitement du signal et le traitement d'images.
+
+Analyse spectrale
+"""""""""""""""""
+
+L'exemple ci dessous montre comment utiliser Scipy pour calculer le spectre d'une sinusoïde.
+
+.. plot:: chapitre4/scipy1.py
+   :include-source:
+
+Génération aléatoire
+""""""""""""""""""""
+
+Scipy dispose également de fonctionnalités puissantes pour la génération de nombres aléatoires. Le programme suivant montre comment générer 1000 nombres aléatoires suivant une loi Gaussienne de moyenne nulle et de variance unitaire.
+
+.. plot:: chapitre4/scipy2.py
+   :include-source:
+
+Exemples d'application
+^^^^^^^^^^^^^^^^^^^^^^
+
+Regression polynomiale
+""""""""""""""""""""""
+
+L'exemple ci-dessous montre comment réaliser une regression polynomiale sur un ensemble de mesures bruitées. Le bruit est généré avec Scipy et la regression est effectuée par Numpy. L'affichage des courbes s'obtient simplement en appelant la fonction plot de Matplotlib.
+
+.. plot:: chapitre4/scipy3.py
+    :include-source:
+
+

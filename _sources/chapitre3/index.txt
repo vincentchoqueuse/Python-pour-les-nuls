@@ -1,0 +1,88 @@
+Les bases du Langages
+=====================
+
+Les variables
+-------------
+
+La création d'une variable en python s'obtient simplement en indiquant le nom de la variable suivi du signe égal et de sa valeur. Ainsi pour créer une variable contenant la chaîne de caractère "coucou", nous pouvons utiliser l'instruction
+
+.. code::
+
+   ma_chaine="coucou"
+
+Le type de la variable est directement déterminé par son contenu (nombre, chaîne de caractère ou booléen).
+
+Concernant le nom de la variable, la liste ci dessous présente les mots réservés du langage.
+
+.. code::
+
+   and, assert, break, class, continue, def, del, elif, else, except, exec, finally, for, from, global, if, import, in, is, lambda, not, or, pass, print, raise, return, try, while, yield
+
+Bien entendu, nous éviterons dans la mesure du possible d'utiliser ces mots pour nommer une variable ou une fonction ;)
+
+
+Les structures de contrôles
+---------------------------
+
+Le Python intègre trois structures de contrôle: le if, le for et le while.
+
+.. note::
+
+    En python, les instructions appartenant à une structure de contrôles sont indiquées par des indentations (5 espaces ou une tabulation).
+
+Le test if/else
+````````````````
+
+Le test if permet d'aiguiller le programme en fonction d'une condition binaire.
+
+.. code::
+
+    nombre=1
+    if (nombre%2)==0:
+        print("le nombre %d est pair" % nombre)
+    else:
+        print("le nombre %d est impair" % nombre)
+
+Ce programme permet de tester si un nombre est pair. Il est basé sur l'opérateur % permettant le calcul du reste de la division entière par 2.
+
+La boucle for
+``````````````
+
+La boucle for permet de réaliser un ensemble d'instructions plusieurs fois. Cette boucle nécessite de connaître au préalable le nombre d'itérations.
+
+.. code::
+
+    Sn=1;                       #initialisation de Sn
+    for indice in range(1,6):   #boucle for allant de 1 à 5
+        Sn=indice*Sn            #calcul successif du produit
+        print("Sn=%d" % Sn)     #affichage du produit
+
+
+L'exemple ci-dessus permet de déterminer les élements d'une suite géométrique. Le programme va afficher les élements de la suite pour les différentes valeurs de N c-a-d Sn=1, Sn=2, Sn=6, Sn=24 et Sn=120. Le début et la fin de boucle sont spécifiés via les arguments de la fonction range. Concernant ces arguments, il y a trois possibilités
+
+* Lorsque la fonction range ne comporte qu'un seul argument N, la boucle ira de 0 à N-1.
+* Lorsque la fonction range comporte deux arguments N1 et N2, la boucle ira de N1 à N2-1.
+* Lorsque la fonction range comporte trois arguments N1, N2 et N3, la boucle ira de N1 à N2-1 par pas égal à N3.
+
+Notons que toute instruction ne comportant pas d'indentation sera considérée extérieure à la structure de contrôle. A titre d'illustration, si nous supprimons les indentations de la dernière ligne du programme précédent, le programme n'affichera plus que Sn=120.
+
+
+La boucle while
+```````````````
+Tout comme le for, la boucle while permet de réaliser un ensemble d'instructions plusieurs fois. Toutefois, contrairement au for, le nombre d'itérations n'est pas nécessairement connu à l'avance et dépend d'une ou de plusieurs conditions.
+
+.. code:: python
+
+    n = input("Please enter 'coucou':")
+    while n != 'coucou':
+        n = input("Please enter 'coucou':")
+
+Le programme ci-dessus demande à l'utilisateur de rentrer au clavier la chaine de caractères "coucou". Le programme continue de boucler tant que le chaîne de caractère n'est pas bonne. Notons qu'en Python, les boucles while sont nettement moins fréquentes que les boucles for.
+
+
+
+Références
+----------
+
+.. [Package_List] Liste des packages de la distribution Anaconda http://docs.continuum.io/anaconda/pkg-docs
+

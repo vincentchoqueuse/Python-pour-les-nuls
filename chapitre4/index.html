@@ -1,0 +1,433 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Le trio Numpy / Scipy / Matplotlib &mdash; documentation Python pour les nuls 1.0</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="documentation Python pour les nuls 1.0" href="../index.html"/>
+        <link rel="prev" title="Les bases du Langages" href="../chapitre3/index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python pour les nuls
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../chapitre1/index.html">Pourquoi Python ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapitre2/index.html">Installation &amp; Environnement de developpement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapitre3/index.html">Les bases du Langages</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Le trio Numpy / Scipy / Matplotlib</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#utilisation-d-une-battery">Utilisation d&#8217;une <em>Battery</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#numpy">Numpy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#matplotlib">Matplotlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#scipy">Scipy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#analyse-spectrale">Analyse spectrale</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#generation-aleatoire">Génération aléatoire</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#exemples-d-application">Exemples d&#8217;application</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#regression-polynomiale">Regression polynomiale</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Python pour les nuls</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Le trio Numpy / Scipy / Matplotlib</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/chapitre4/index.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="le-trio-numpy-scipy-matplotlib">
+<h1>Le trio Numpy / Scipy / Matplotlib<a class="headerlink" href="#le-trio-numpy-scipy-matplotlib" title="Lien permanent vers ce titre">¶</a></h1>
+<p>L&#8217;un des intérêts du Python réside dans son approche <em>Batteries Included</em> qui lui confèrent une grande polyvalence. Grace à ses Batteries, le Python peut aussi bien réaliser des calculs mathématiques poussés que gérer un site web ou traiter des images.</p>
+<p>Dans les sections suivantes, nous allons faire un tour rapide de plusieurs <em>Batteries</em> particulièrement utiles pour les scientifiques. Plus particulièrement, nous allons nous focaliser sur le trio Numpy/Scipy/ Matplotlib...véritable couteau suisse du calcul scientifique en Python !</p>
+<div class="section" id="utilisation-d-une-battery">
+<h2>Utilisation d&#8217;une <em>Battery</em><a class="headerlink" href="#utilisation-d-une-battery" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Pour inclure une <em>Battery</em> dans un programme, il faut explicitement l&#8217;importer en début de programme. Le programme suivant montre comment importer la librairie Numpy et utiliser sa fonction ones (création d&#8217;un tableau comportant N éléments à 1)</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="k">import</span> <span class="o">*</span>
+
+<span class="n">x</span><span class="o">=</span><span class="n">ones</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>       <span class="c1">#création d&#39;un tableau de 1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>         <span class="c1">#affichage du tableau</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Astuce</p>
+<p>Pour éviter d’éventuels conflits lors de l&#8217;importation des <em>Batteries</em> (doublons sur les noms de fonctions, etc), il est possible de définir le <em>namespace</em> d&#8217;une librairie en utilisant le terme <em>as</em>. A titre d&#8217;illustration, le programme suivant importe Numpy avec le namespace <em>np</em></p>
+<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>  <span class="c1">#importation de numpy avec le namespace np</span>
+
+<span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>       <span class="c1">#création d&#39;un tableau de 1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>            <span class="c1">#affichage du tableau</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="numpy">
+<h2>Numpy<a class="headerlink" href="#numpy" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">La documentation de Numpy est accessible à l&#8217;adresse: <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.html">https://docs.scipy.org/doc/numpy/reference/routines.html</a></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Contrairement à Matlab, le premier élément d&#8217;un tableau est stocké à la position 0.</p>
+</div>
+<p>La librairie Numpy permet la manipulation des tableaux et des matrices. Elle intègre également un grand nombre de fonctionnalités mathématiques. Le programme suivant montre comment utiliser certaines de ses fonctions.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="k">import</span> <span class="o">*</span>                                 <span class="c1">#importation de Numpy</span>
+
+<span class="n">mon_tableau</span><span class="o">=</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">19</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">221</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>             <span class="c1">#création d&#39;un tableau Numpy</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mon_tableau</span><span class="p">)</span>                                  <span class="c1">#affichage du contenu du tableau</span>
+
+<span class="c1">#extraction de quelques informations</span>
+<span class="n">taille</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">mon_tableau</span><span class="p">)</span>                             <span class="c1">#détermine la taille du tableau</span>
+<span class="n">premier</span><span class="o">=</span><span class="n">mon_tableau</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>                              <span class="c1">#extraction du premier élement</span>
+<span class="n">dernier</span><span class="o">=</span><span class="n">mon_tableau</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>                             <span class="c1">#extraction du dernier element (index=-1)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;taille=</span><span class="si">%d</span><span class="s2">, premier=</span><span class="si">%d</span><span class="s2">, dernier=</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">taille</span><span class="p">,</span><span class="n">premier</span><span class="p">,</span> <span class="n">dernier</span><span class="p">))</span>
+
+<span class="n">mon_tableau</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="mi">100</span>                                  <span class="c1">#changement d&#39;un élement</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mon_tableau</span><span class="p">)</span>
+
+<span class="c1">#recherche de l&#39;element le plus grand</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">amax</span><span class="p">(</span><span class="n">mon_tableau</span><span class="p">))</span>                            <span class="c1">#valeur maximale</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">argmax</span><span class="p">(</span><span class="n">mon_tableau</span><span class="p">))</span>                          <span class="c1">#positon de la valeur maximale</span>
+
+<span class="c1">#Quelques fonction mathématiques</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">mon_tableau</span><span class="p">))</span>                             <span class="c1">#calcul et affichage de la somme</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mean</span><span class="p">(</span><span class="n">mon_tableau</span><span class="p">))</span>                            <span class="c1">#calcul et affichage de la moyenne</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">var</span><span class="p">(</span><span class="n">mon_tableau</span><span class="p">))</span>                             <span class="c1">#calcul et affichage de la variance</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">power</span><span class="p">(</span><span class="n">mon_tableau</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>                         <span class="c1">#calcul et affichage du carré de chaque élement</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="n">mon_tableau</span><span class="p">))</span>                             <span class="c1">#calcul et affichage du cosinus de chaque élement</span>
+
+
+</pre></div>
+</div>
+<p>Généralement, l&#8217;utilisation de Numpy permet de réduire considérablement le nombre de boucles dans votre programme. En effet, lorsqu&#8217;une fonction mathématique est appliquée à un tableau Numpy, Numpy va automatiquement appliquer cette fonction à chaque élément du tableau.</p>
+<p>Pour illustrer cette fonctionnalité, imaginons que nous souhaitons calculer le cosinus de plusieurs angles. Avec un langage de bas niveau comme le C, il faut créer un tableau contenant nos angles puis parcourir ce tableau avec une boucle for. Avec Numpy, c&#8217;est plus simple :)</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="k">import</span> <span class="o">*</span>                                 <span class="c1">#importation de Numpy</span>
+
+<span class="n">mes_angles</span><span class="o">=</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="n">pi</span><span class="o">/</span><span class="mi">6</span><span class="p">,</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">pi</span><span class="p">])</span>        <span class="c1">#création d&#39;un tableau Numpy</span>
+<span class="n">mes_cosinus</span><span class="o">=</span><span class="n">cos</span><span class="p">(</span><span class="n">mes_angles</span><span class="p">)</span>                         <span class="c1">#la fonction cos est appliquée à l&#39;ensemble des élements du tableau</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">mes_cosinus</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+<div class="section" id="matplotlib">
+<h2>Matplotlib<a class="headerlink" href="#matplotlib" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">La documentation de Matplotlib est accessible à l&#8217;adresse: <a class="reference external" href="http://matplotlib.org/contents.html">http://matplotlib.org/contents.html</a></p>
+</div>
+<p>Tout scientifique qui se respecte doit posséder dans sa trousse à outils une librairie d&#8217;affichage graphique digne de ce nom pour visualiser ses données. C&#8217;est ici que Matplotlib intervient. La librairie Matplotlib permet l&#8217;affichage de courbes, de graphiques, d&#8217;histogrammes et l&#8217;export des courbes dans divers formats (pdf, svg, png ou bmp). Matplotlib possède également un module nommé pylab utilisant une syntaxe proche de Matlab pour l&#8217;affichage. L&#8217;exemple ci-dessous montre comment générer puis tracer une sinusoîde avec le module pylab.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="o">*</span>             <span class="c1">#import de numpy</span>
+<span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>             <span class="c1">#import de matplotlib.pylab</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">1000</span><span class="p">)</span>        <span class="c1">#creation de la base temps avec numpy</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="mi">10</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>              <span class="c1">#creation d&#39;une sinusoide à 10Hz</span>
+
+<span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>                      <span class="c1">#Affichage via la fonction plot de Matplotlib</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Temps (s)&#39;</span><span class="p">)</span>             <span class="c1">#définition de l&#39;axe des abscisses</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitude&#39;</span><span class="p">)</span>             <span class="c1">#définition de l&#39;axe des ordonnées</span>
+<span class="n">show</span><span class="p">()</span>                          <span class="c1">#affichage des courbes</span>
+</pre></div>
+</div>
+<p>(<a class="reference external" href="../chapitre4/matplotlib1.py">Source code</a>, <a class="reference external" href="../chapitre4/matplotlib1.png">png</a>, <a class="reference external" href="../chapitre4/matplotlib1.hires.png">hires.png</a>, <a class="reference external" href="../chapitre4/matplotlib1.pdf">pdf</a>)</p>
+<div class="figure">
+<img alt="../_images/matplotlib1.png" src="../_images/matplotlib1.png" />
+</div>
+<p>La superposition de deux courbes s&#8217;obtient simplement en appelant plusieurs fois la fonction plot. Le programme suivant illustre cette fonctionnalité.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="o">*</span>             <span class="c1">#import de numpy</span>
+<span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>             <span class="c1">#import de matplotlib.pylab</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">1000</span><span class="p">)</span>        <span class="c1">#creation de la base temps avec numpy</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="mi">10</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>              <span class="c1">#creation d&#39;une sinusoide à 10hz</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="mi">10</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>              <span class="c1">#creation d&#39;une sinusoide à 10hz</span>
+
+<span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;sinus&quot;</span><span class="p">)</span>        <span class="c1">#Affichage via la fonction plot de Matplotlib</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">s2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;cosinus&quot;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Temps (s)&#39;</span><span class="p">)</span>             <span class="c1">#définition de l&#39;axe des abscisses</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitude&#39;</span><span class="p">)</span>             <span class="c1">#définition de l&#39;axe des ordonnées</span>
+<span class="n">legend</span><span class="p">()</span>                        <span class="c1">#ajout de la légende</span>
+<span class="n">show</span><span class="p">()</span>                          <span class="c1">#affichage des courbes</span>
+</pre></div>
+</div>
+<p>(<a class="reference external" href="../chapitre4/matplotlib2.py">Source code</a>, <a class="reference external" href="../chapitre4/matplotlib2.png">png</a>, <a class="reference external" href="../chapitre4/matplotlib2.hires.png">hires.png</a>, <a class="reference external" href="../chapitre4/matplotlib2.pdf">pdf</a>)</p>
+<div class="figure">
+<img alt="../_images/matplotlib2.png" src="../_images/matplotlib2.png" />
+</div>
+</div>
+<div class="section" id="scipy">
+<h2>Scipy<a class="headerlink" href="#scipy" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">La documentation de Scipy est accessible à l&#8217;adresse: <a class="reference external" href="http://docs.scipy.org/doc/scipy/reference/">http://docs.scipy.org/doc/scipy/reference/</a></p>
+</div>
+<p>La librairie Scipy intégre un ensemble de modules pour l&#8217;optimisation, l&#8217;algèbre linéaire, les statistiques, le traitement du signal et le traitement d&#8217;images.</p>
+<div class="section" id="analyse-spectrale">
+<h3>Analyse spectrale<a class="headerlink" href="#analyse-spectrale" title="Lien permanent vers ce titre">¶</a></h3>
+<p>L&#8217;exemple ci dessous montre comment utiliser Scipy pour calculer le spectre d&#8217;une sinusoïde.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="o">*</span>             <span class="c1">#import de numpy</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">signal</span>        <span class="c1">#import du module signal de scipy</span>
+<span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>             <span class="c1">#import de matplotlib.pylab</span>
+
+<span class="n">Fe</span><span class="o">=</span><span class="mi">100</span>                          <span class="c1">#fréquence d&#39;échantillonnage</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="n">Fe</span><span class="p">)</span>        <span class="c1">#creation de la base temps avec numpy</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="mi">10</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>              <span class="c1">#creation d&#39;une sinusoide à 10hz</span>
+<span class="n">f</span><span class="p">,</span><span class="n">Pxx</span><span class="o">=</span><span class="n">signal</span><span class="o">.</span><span class="n">periodogram</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="n">Fe</span><span class="p">)</span>  <span class="c1">#calcul du periodogram</span>
+<span class="n">f2</span><span class="p">,</span><span class="n">Px2</span><span class="o">=</span><span class="n">signal</span><span class="o">.</span><span class="n">periodogram</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="n">Fe</span><span class="p">,</span><span class="bp">None</span><span class="p">,</span><span class="mi">10</span><span class="o">*</span><span class="n">Fe</span><span class="p">)</span>  <span class="c1">#calcul du periodogram avec zero padding</span>
+
+<span class="n">plot</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">Pxx</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;periodogramme&quot;</span><span class="p">)</span>   <span class="c1">#Affichage via la fonction plot de Matplotlib</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">f2</span><span class="p">,</span><span class="n">Px2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;periodogramme avec zero padding&quot;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frequence (Hz)&#39;</span><span class="p">)</span>        <span class="c1">#définition de l&#39;axe des abscisses</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Module&#39;</span><span class="p">)</span>                <span class="c1">#définition de l&#39;axe des ordonnées</span>
+<span class="n">legend</span><span class="p">()</span>
+<span class="n">show</span><span class="p">()</span>                          <span class="c1">#affichage des courbes</span>
+</pre></div>
+</div>
+<p>(<a class="reference external" href="../chapitre4/scipy1.py">Source code</a>, <a class="reference external" href="../chapitre4/scipy1.png">png</a>, <a class="reference external" href="../chapitre4/scipy1.hires.png">hires.png</a>, <a class="reference external" href="../chapitre4/scipy1.pdf">pdf</a>)</p>
+<div class="figure">
+<img alt="../_images/scipy1.png" src="../_images/scipy1.png" />
+</div>
+</div>
+<div class="section" id="generation-aleatoire">
+<h3>Génération aléatoire<a class="headerlink" href="#generation-aleatoire" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Scipy dispose également de fonctionnalités puissantes pour la génération de nombres aléatoires. Le programme suivant montre comment générer 1000 nombres aléatoires suivant une loi Gaussienne de moyenne nulle et de variance unitaire.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="o">*</span>             <span class="c1">#import de numpy</span>
+<span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>             <span class="c1">#import de matplotlib.pylab</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span>    <span class="c1">#import du module norm de scipy.stats</span>
+
+<span class="n">r</span><span class="o">=</span><span class="n">norm</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>           <span class="c1">#Réalisation aléatoire suivant une loi gaussienne</span>
+<span class="n">moyenne</span><span class="o">=</span><span class="n">mean</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>                 <span class="c1">#calcul de la moyenne</span>
+<span class="n">variance</span><span class="o">=</span><span class="n">var</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>                 <span class="c1">#calcul de la variance</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Moyenne: </span><span class="si">%f</span><span class="s2">, variance: </span><span class="si">%f</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">moyenne</span><span class="p">,</span><span class="n">variance</span><span class="p">))</span>
+
+<span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>                         <span class="c1">#Affichage de la réalisation aléatoire via la fonction plot de Matplotlib</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Echantillons&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Valeur&#39;</span><span class="p">)</span>
+
+<span class="n">figure</span><span class="p">()</span>                        <span class="c1">#création d&#39;une nouvelle figure</span>
+<span class="n">hist</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;stepfilled&#39;</span><span class="p">)</span>  <span class="c1">#affichage de l&#39;histogramme</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Valeur&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Nb occurences&#39;</span><span class="p">)</span>
+
+<span class="n">show</span><span class="p">()</span>                          <span class="c1">#affichage des courbes</span>
+</pre></div>
+</div>
+<p>(<a class="reference external" href="../chapitre4/scipy2.py">Source code</a>)</p>
+<div class="figure" id="id1">
+<img alt="../_images/scipy2_00.png" src="../_images/scipy2_00.png" />
+<p class="caption"><span class="caption-text">(<a class="reference external" href="../chapitre4/scipy2_00.png">png</a>, <a class="reference external" href="../chapitre4/scipy2_00.hires.png">hires.png</a>, <a class="reference external" href="../chapitre4/scipy2_00.pdf">pdf</a>)</span></p>
+</div>
+<div class="figure" id="id2">
+<img alt="../_images/scipy2_01.png" src="../_images/scipy2_01.png" />
+<p class="caption"><span class="caption-text">(<a class="reference external" href="../chapitre4/scipy2_01.png">png</a>, <a class="reference external" href="../chapitre4/scipy2_01.hires.png">hires.png</a>, <a class="reference external" href="../chapitre4/scipy2_01.pdf">pdf</a>)</span></p>
+</div>
+</div>
+</div>
+<div class="section" id="exemples-d-application">
+<h2>Exemples d&#8217;application<a class="headerlink" href="#exemples-d-application" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="regression-polynomiale">
+<h3>Regression polynomiale<a class="headerlink" href="#regression-polynomiale" title="Lien permanent vers ce titre">¶</a></h3>
+<p>L&#8217;exemple ci-dessous montre comment réaliser une regression polynomiale sur un ensemble de mesures bruitées. Le bruit est généré avec Scipy et la regression est effectuée par Numpy. L&#8217;affichage des courbes s&#8217;obtient simplement en appelant la fonction plot de Matplotlib.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="o">*</span>             <span class="c1">#import de numpy</span>
+<span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>             <span class="c1">#import de matplotlib.pylab</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span>    <span class="c1">#import du module norm de scipy.stats</span>
+
+<span class="n">t</span><span class="o">=</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">c</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>                       <span class="c1">#Définition du polynome (t**2+2*t+2)</span>
+<span class="n">y</span><span class="o">=</span><span class="n">polyval</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="n">t</span><span class="p">)</span>                  <span class="c1">#Evaluation du polynome</span>
+<span class="n">yn</span><span class="o">=</span><span class="n">y</span><span class="o">+</span><span class="n">norm</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>      <span class="c1">#Ajout d&#39;un bruit gaussian</span>
+
+<span class="n">c_est</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">yn</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>     <span class="c1">#regression polynomiale (degré 2)</span>
+<span class="n">y_est</span><span class="o">=</span><span class="n">polyval</span><span class="p">(</span><span class="n">c_est</span><span class="p">,</span><span class="n">t</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">yn</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;mesure&quot;</span><span class="p">)</span>   <span class="c1">#Affichage des points</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y_est</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;regression&quot;</span><span class="p">)</span><span class="c1">#Affichage des points</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;temps&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;signal&#39;</span><span class="p">)</span>
+<span class="n">legend</span><span class="p">()</span>
+<span class="n">show</span><span class="p">()</span>                          <span class="c1">#affichage des courbes</span>
+</pre></div>
+</div>
+<p>(<a class="reference external" href="../chapitre4/scipy3.py">Source code</a>, <a class="reference external" href="../chapitre4/scipy3.png">png</a>, <a class="reference external" href="../chapitre4/scipy3.hires.png">hires.png</a>, <a class="reference external" href="../chapitre4/scipy3.pdf">pdf</a>)</p>
+<div class="figure">
+<img alt="../_images/scipy3.png" src="../_images/scipy3.png" />
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../chapitre3/index.html" class="btn btn-neutral" title="Les bases du Langages" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Vincent Choqueuse.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
